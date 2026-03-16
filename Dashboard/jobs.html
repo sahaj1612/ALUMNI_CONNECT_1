@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jobs Posted</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+background:#f4f6f9;
+font-family:Segoe UI;
+}
+
+.topbar{
+background:#1b263b;
+color:white;
+padding:15px;
+font-size:22px;
+font-weight:bold;
+}
+
+.box{
+background:white;
+padding:30px;
+margin-top:30px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="topbar">
+COLLEGE ALUMNI SYSTEM — Jobs Posted
+</div>
+
+<div class="container">
+
+<div class="box">
+
+<h3 class="mb-4">Post New Job</h3>
+
+<div class="row g-3">
+
+<div class="col-md-3">
+<input type="text" id="company" class="form-control" placeholder="Company Name">
+</div>
+
+<div class="col-md-3">
+<input type="text" id="role" class="form-control" placeholder="Job Role">
+</div>
+
+<div class="col-md-2">
+<input type="text" id="salary" class="form-control" placeholder="Salary">
+</div>
+
+<div class="col-md-2">
+<input type="text" id="location" class="form-control" placeholder="Location">
+</div>
+
+<div class="col-md-2">
+<button class="btn btn-success w-100" onclick="addJob()">Post Job</button>
+</div>
+
+</div>
+
+<hr>
+
+<h3 class="mb-3">Jobs List</h3>
+
+<table class="table table-bordered table-hover">
+<thead class="table-dark">
+<tr>
+<th>#</th>
+<th>Company</th>
+<th>Role</th>
+<th>Salary</th>
+<th>Location</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="jobTable">
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script>
+
+let jobCount = 0;
+
+function addJob(){
+
+let company = document.getElementById("company").value;
+let role = document.getElementById("role").value;
+let salary = document.getElementById("salary").value;
+let location = document.getElementById("location").value;
+
+if(company=="" || role=="" || salary=="" || location==""){
+alert("Fill all fields");
+return;
+}
+
+jobCount++;
+
+let table = document.getElementById("jobTable");
+
+let row = table.insertRow();
+
+row.innerHTML = `
+<td>${jobCount}</td>
+<td>${company}</td>
+<td>${role}</td>
+<td>${salary}</td>
+<td>${location}</td>
+<td><button class="btn btn-danger btn-sm" onclick="deleteJob(this)">Delete</button></td>
+`;
+
+document.getElementById("company").value="";
+document.getElementById("role").value="";
+document.getElementById("salary").value="";
+document.getElementById("location").value="";
+
+}
+
+function deleteJob(btn){
+btn.parentElement.parentElement.remove();
+}
+
+</script>
+
+</body>
+</html>
+```
