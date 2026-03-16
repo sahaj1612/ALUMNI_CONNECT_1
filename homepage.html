@@ -4,12 +4,10 @@
 <meta charset="UTF-8">
 <title>SDMCET AlumniConnect | Dharwad</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ---------- GLOBAL ---------- */
 *{
     margin:0;
     padding:0;
@@ -22,7 +20,8 @@ body{
     min-height:100vh;
 }
 
-/* ---------- NAVBAR ---------- */
+/* NAVBAR */
+
 .navbar{
     background: rgba(31,42,68,0.85);
     backdrop-filter: blur(10px);
@@ -83,9 +82,10 @@ body{
     font-weight:600;
 }
 
-/* ---------- HERO ---------- */
+/* HERO */
+
 .hero{
-    height:75vh;
+    height:100vh;
     position:relative;
     overflow:hidden;
 }
@@ -149,7 +149,6 @@ body{
     line-height:1.6;
 }
 
-/* CENTER LOGIN BUTTON */
 .hero-login-btn{
     margin-top:25px;
     padding:14px 42px;
@@ -170,7 +169,8 @@ body{
     color:white;
 }
 
-/* ---------- MODAL ---------- */
+/* MODAL */
+
 .modal{
     position:fixed;
     inset:0;
@@ -205,7 +205,6 @@ body{
     cursor:pointer;
 }
 
-/* Choice buttons */
 .select-btn{
     width:100%;
     padding:14px;
@@ -223,7 +222,6 @@ body{
     box-shadow:0 10px 20px rgba(79,70,229,.35);
 }
 
-/* Login form */
 .login-form{
     display:none;
 }
@@ -256,13 +254,13 @@ body{
 }
 
 /* FOOTER */
+
 footer{
     background:#1f2a44;
     color:white;
     text-align:center;
     padding:15px;
     font-size:14px;
-    margin-top:60px;
 }
 
 </style>
@@ -270,12 +268,12 @@ footer{
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
     <div class="nav-left">
         <img src="https://cache.careers360.mobi/media/colleges/social-media/logo/SDM_College_of_Engineering_and_Technology_Logo_.png">
         <h2>SDMCET AlumniConnect</h2>
     </div>
+
     <ul>
         <li>About SDMCET</li>
         <li>Alumni</li>
@@ -285,60 +283,74 @@ footer{
     </ul>
 </div>
 
-<!-- HERO -->
 <div class="hero">
-    <div class="slide slide1"></div>
-    <div class="slide slide2"></div>
-    <div class="slide slide3"></div>
 
-    <div class="hero-content">
-        <h1>SDMCET AlumniConnect</h1>
-        <h3>Shaping Engineers with Knowledge, Values, and Innovation</h3>
-        <p>
-            A dedicated alumni engagement platform for  
-            <strong>S.D.M. College of Engineering & Technology, Dharwad</strong>,  
-            encouraging meaningful conversations between students and alumni  
-            to support learning, collaboration, and industry readiness.
-        </p>
+<div class="slide slide1"></div>
+<div class="slide slide2"></div>
+<div class="slide slide3"></div>
 
-        <br>
-        <button class="hero-login-btn" onclick="openModal()">Login</button>
-    </div>
+<div class="hero-content">
+
+<h1>SDMCET AlumniConnect</h1>
+
+<h3>Shaping Engineers with Knowledge, Values, and Innovation</h3>
+
+<p>
+A dedicated alumni engagement platform for
+<strong>S.D.M. College of Engineering & Technology, Dharwad</strong>,
+encouraging meaningful conversations between students and alumni
+to support learning, collaboration, and industry readiness.
+</p>
+
+<button class="hero-login-btn" onclick="openModal()">Login</button>
+
+</div>
 </div>
 
-<!-- LOGIN MODAL -->
 <div id="loginModal" class="modal">
 
-    <div class="modal-box">
+<div class="modal-box">
 
-        <span class="close" onclick="closeModal()">&times;</span>
+<span class="close" onclick="closeModal()">&times;</span>
 
-        <div id="loginChoice">
-            <h2>Welcome to AlumniConnect</h2>
-            <p>Select how you want to login</p>
+<div id="loginChoice">
 
-            <button class="select-btn" onclick="showStudent()">🎓 Student Login</button>
-            <button class="select-btn" onclick="showAlumni()">👨‍💼 Alumni Login</button>
-        </div>
+<h2>Welcome to AlumniConnect</h2>
+<p>Select how you want to login</p>
 
-        <div id="studentLogin" class="login-form">
-            <h3>Student Login</h3>
-            <input type="text" placeholder="USN">
-            <input type="email" placeholder="College Email">
-            <input type="password" placeholder="Password">
-            <button class="submit-btn">Login</button>
-            <p class="back" onclick="backChoice()">← Back</p>
-        </div>
+<button class="select-btn" onclick="showStudent()">🎓 Student Login</button>
+<button class="select-btn" onclick="showAlumni()">👨‍💼 Alumni Login</button>
 
-        <div id="alumniLogin" class="login-form">
-            <h3>Alumni Login</h3>
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <button class="submit-btn">Login</button>
-            <p class="back" onclick="backChoice()">← Back</p>
-        </div>
+</div>
 
-    </div>
+<div id="studentLogin" class="login-form">
+
+<h3>Student Login</h3>
+
+<input type="text" placeholder="USN">
+<input type="email" placeholder="College Email">
+<input type="password" placeholder="Password">
+
+<button class="submit-btn">Login</button>
+
+<p class="back" onclick="backChoice()">← Back</p>
+
+</div>
+
+<div id="alumniLogin" class="login-form">
+
+<h3>Alumni Login</h3>
+
+<input type="email" placeholder="Email">
+<input type="password" placeholder="Password">
+
+<button class="submit-btn">Login</button>
+
+<p class="back" onclick="backChoice()">← Back</p>
+
+</div>
+
+</div>
 </div>
 
 <footer>
@@ -348,28 +360,28 @@ footer{
 <script>
 
 function openModal(){
-    document.getElementById("loginModal").style.display="flex";
+document.getElementById("loginModal").style.display="flex";
 }
 
 function closeModal(){
-    document.getElementById("loginModal").style.display="none";
-    backChoice();
+document.getElementById("loginModal").style.display="none";
+backChoice();
 }
 
 function showStudent(){
-    document.getElementById("loginChoice").style.display="none";
-    document.getElementById("studentLogin").style.display="block";
+document.getElementById("loginChoice").style.display="none";
+document.getElementById("studentLogin").style.display="block";
 }
 
 function showAlumni(){
-    document.getElementById("loginChoice").style.display="none";
-    document.getElementById("alumniLogin").style.display="block";
+document.getElementById("loginChoice").style.display="none";
+document.getElementById("alumniLogin").style.display="block";
 }
 
 function backChoice(){
-    document.getElementById("loginChoice").style.display="block";
-    document.getElementById("studentLogin").style.display="none";
-    document.getElementById("alumniLogin").style.display="none";
+document.getElementById("loginChoice").style.display="block";
+document.getElementById("studentLogin").style.display="none";
+document.getElementById("alumniLogin").style.display="none";
 }
 
 </script>
