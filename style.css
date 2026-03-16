@@ -1,0 +1,191 @@
+/* GLOBAL */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+}
+
+body{
+background:#f5f6fa;
+line-height:1.6;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+background:#3f4a63;
+color:white;
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.nav-left{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo{
+width:40px;
+}
+
+.nav-links{
+list-style:none;
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-size:16px;
+font-weight:500;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#ffd166;
+}
+
+
+/* HERO SECTION */
+
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(135deg,#eef2ff,#f8fafc);
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:20px;
+color:#333;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:25px;
+color:#555;
+max-width:600px;
+}
+
+.hero button{
+padding:12px 30px;
+border:none;
+border-radius:25px;
+background:#3f4a63;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.hero button:hover{
+background:#ffd166;
+color:#333;
+}
+
+
+/* CONTENT SECTION */
+
+.content{
+padding:60px 80px;
+text-align:center;
+}
+
+.content h1{
+font-size:36px;
+margin-bottom:20px;
+color:#333;
+}
+
+.content p{
+font-size:18px;
+max-width:800px;
+margin:auto;
+color:#555;
+}
+
+
+/* EVENTS / CARDS SECTION */
+
+.cards{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.card{
+background:white;
+padding:25px;
+width:250px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card h3{
+margin-bottom:10px;
+color:#333;
+}
+
+.card p{
+font-size:14px;
+color:#555;
+}
+
+
+/* FOOTER */
+
+.footer{
+background:#3f4a63;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media(max-width:768px){
+
+.navbar{
+flex-direction:column;
+gap:10px;
+}
+
+.nav-links{
+flex-direction:column;
+align-items:center;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.content{
+padding:40px 20px;
+}
+
+.cards{
+flex-direction:column;
+align-items:center;
+}
+
+}
