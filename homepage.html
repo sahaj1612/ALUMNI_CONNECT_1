@@ -135,8 +135,15 @@ body{
 .hero-content h1{
     font-size:48px;
     background: linear-gradient(90deg,#ffffff,#ffcc70);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+    
+    /* Standard property */
+    background-clip: text;
+
+    /* Chrome / Safari support */
+    -webkit-background-clip: text;
+
+    /* Makes text transparent to show gradient */
+    color: transparent;
 }
 
 .hero-content h3{

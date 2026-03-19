@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alumni Panel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+
+body{
+background:#f4f6f9;
+font-family:Segoe UI;
+}
+
+/* Sidebar */
+
+.sidebar{
+position:fixed;
+width:250px;
+height:100vh;
+background:#0d1b2a;
+color:white;
+padding-top:20px;
+}
+
+.sidebar h4{
+text-align:center;
+margin-bottom:25px;
+}
+
+.sidebar a{
+display:block;
+padding:14px;
+color:white;
+text-decoration:none;
+cursor:pointer;
+transition:.3s;
+}
+
+.sidebar a:hover{
+background:#1b263b;
+}
+
+/* Topbar */
+
+.topbar{
+margin-left:250px;
+background:#1b263b;
+color:white;
+padding:15px;
+font-size:22px;
+font-weight:bold;
+}
+
+/* Content */
+
+.content{
+margin-left:250px;
+padding:30px;
+}
+
+.section{
+display:none;
+}
+
+.active{
+display:block;
+}
+
+/* Dashboard Cards */
+
+.card-box{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+<h4>Alumni Panel</h4>
+
+<a onclick="showSection('dashboard')"><i class="fa fa-home"></i> Dashboard</a> <a onclick="showSection('postJob')"><i class="fa fa-briefcase"></i> Post Job</a> <a onclick="showSection('events')"><i class="fa fa-calendar"></i> Create Event</a> <a onclick="showSection('network')"><i class="fa fa-users"></i> Network</a> <a onclick="showSection('donation')"><i class="fa fa-donate"></i> Donations</a>
+
+</div>
+
+<div class="topbar">
+COLLEGE ALUMNI SYSTEM
+</div>
+
+<div class="content">
+
+<!-- DASHBOARD -->
+
+<div id="dashboard" class="section active">
+
+<h3 class="mb-4">Dashboard</h3>
+
+<div class="row">
+
+<div class="col-md-3">
+<div class="card-box">
+<i class="fa fa-calendar fa-2x text-primary"></i>
+<h2>5</h2>
+<p>Total Events</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card-box">
+<i class="fa fa-briefcase fa-2x text-danger"></i>
+<h2>3</h2>
+<p>Jobs Posted</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card-box">
+<i class="fa fa-users fa-2x text-success"></i>
+<h2>120</h2>
+<p>Connections</p>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card-box">
+<i class="fa fa-donate fa-2x text-warning"></i>
+<h2>₹25,000</h2>
+<p>Total Donations</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- POST JOB -->
+
+<div id="postJob" class="section">
+
+<h3 class="mb-4">Post Job</h3>
+
+<div class="row g-3">
+<div class="col-md-3">
+<input type="text" id="company" class="form-control" placeholder="Company">
+</div>
+
+<div class="col-md-3">
+<input type="text" id="role" class="form-control" placeholder="Role">
+</div>
+
+<div class="col-md-2">
+<input type="text" id="salary" class="form-control" placeholder="Salary">
+</div>
+
+<div class="col-md-2">
+<input type="text" id="location" class="form-control" placeholder="Location">
+</div>
+
+<div class="col-md-2">
+<button class="btn btn-success w-100" onclick="addJob()">Post</button>
+</div>
+</div>
+
+<hr>
+
+<table class="table table-bordered bg-white">
+<thead class="table-dark">
+<tr>
+<th>#</th>
+<th>Company</th>
+<th>Role</th>
+<th>Salary</th>
+<th>Location</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="jobTable"></tbody>
+</table>
+
+</div>
+
+<!-- EVENTS -->
+
+<div id="events" class="section">
+
+<h3 class="mb-4">Create Event</h3>
+
+<div class="row g-3">
+<div class="col-md-3">
+<input type="text" id="title" class="form-control" placeholder="Event Title">
+</div>
+
+<div class="col-md-3">
+<input type="date" id="date" class="form-control">
+</div>
+
+<div class="col-md-3">
+<input type="text" id="eventLocation" class="form-control" placeholder="Location">
+</div>
+
+<div class="col-md-3">
+<button class="btn btn-primary w-100" onclick="addEvent()">Add</button>
+</div>
+</div>
+
+<hr>
+
+<table class="table table-bordered bg-white">
+<thead class="table-dark">
+<tr>
+<th>#</th>
+<th>Title</th>
+<th>Date</th>
+<th>Location</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="eventTable"></tbody>
+</table>
+
+</div>
+
+<!-- NETWORK -->
+
+<div id="network" class="section">
+<h3>Alumni Network</h3>
+<div class="card p-4 bg-white">Networking Feature Coming Soon</div>
+</div>
+
+<!-- DONATION -->
+
+<div id="donation" class="section">
+<h3>Donations</h3>
+<div class="card p-4 bg-white">Donation Feature Coming Soon</div>
+</div>
+
+</div>
+
+<script>
+
+function showSection(id){
+
+document.querySelectorAll(".section").forEach(sec=>{
+sec.classList.remove("active")
+})
+
+document.getElementById(id).classList.add("active")
+
+}
+
+/* JOB */
+
+let jobCount=0;
+
+function addJob(){
+
+let company=document.getElementById("company").value
+let role=document.getElementById("role").value
+let salary=document.getElementById("salary").value
+let location=document.getElementById("location").value
+
+if(company==""||role==""||salary==""||location==""){
+alert("Fill all fields")
+return
+}
+
+jobCount++
+
+let row=document.getElementById("jobTable").insertRow()
+
+row.innerHTML=`
+<td>${jobCount}</td>
+<td>${company}</td>
+<td>${role}</td>
+<td>${salary}</td>
+<td>${location}</td>
+<td><button class="btn btn-danger btn-sm" onclick="this.parentElement.parentElement.remove()">Delete</button></td>
+`
+
+}
+
+/* EVENT */
+
+let eventCount=0;
+
+function addEvent(){
+
+let title=document.getElementById("title").value
+let date=document.getElementById("date").value
+let location=document.getElementById("eventLocation").value
+
+if(title==""||date==""||location==""){
+alert("Fill all fields")
+return
+}
+
+eventCount++
+
+let row=document.getElementById("eventTable").insertRow()
+
+row.innerHTML=`
+<td>${eventCount}</td>
+<td>${title}</td>
+<td>${date}</td>
+<td>${location}</td>
+<td><button class="btn btn-danger btn-sm" onclick="this.parentElement.parentElement.remove()">Delete</button></td>
+`
+
+}
+
+</script>
+
+</body>
+</html>
