@@ -347,10 +347,10 @@ to support learning, collaboration, and industry readiness.
 
 <h3>Alumni Login</h3>
 
-<input type="email" id="aemail">
-<input type="password" id="apassword">
+<input type="email" id="aemail" placeholder="Email">
+<input type="password" id="apassword" placeholder="Password">
 
-<button class="submit-btn">Login</button>
+<button class="submit-btn" onclick="alumniLogin()">Login</button>
 
 <p class="back" onclick="backChoice()">← Back</p>
 
@@ -383,6 +383,24 @@ password:document.getElementById("spassword").value
 alert(data.message);
 });
 
+}
+
+function alumniLogin(){
+
+fetch("api/alumni/login.php",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+email:document.getElementById("aemail").value,
+password:document.getElementById("apassword").value
+})
+})
+.then(res=>res.json())
+.then(data=>{
+alert(data.message);
+});
 }
 
 function openModal(){
