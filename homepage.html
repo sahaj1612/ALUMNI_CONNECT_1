@@ -105,41 +105,42 @@ body{
     background-position: center;
     background-color: black; /* fallback */
     opacity: 0;
-    animation: slideShow 30s infinite;
+    animation: slideShow 30s ease-in-out infinite;
     will-change: opacity;
 }
 
-/* Slides */
+/* Slides images */
 .slide1{
     background-image: url("https://www.sdmesociety.in/wp-content/uploads/2018/06/in_17.jpg");
+    animation-delay: 0s;
 }
 
 .slide2{
     background-image: url("https://www.comedk.org/uploads/banner-new3.jpg");
-    animation-delay: 6s;
+    animation-delay: -6s;
 }
 
 .slide3{
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/1c/Aerial_view_of_SDM_College_of_Engineering_and_Technology%2C_Dharwad_Campus.jpg");
-    animation-delay: 12s;
+    animation-delay: -12s;
 }
 
 .slide4{
     background-image: url("https://sdmcet.ac.in/wp-content/uploads/2022/04/SDMCET-college-dharwad-small.jpg");
-    animation-delay: 18s;
+    animation-delay: -18s;
 }
 
 .slide5{
     background-image: url("https://www.admissioninfo.co.in/images/sdm-college-engineering-and-technology-dharwad.jpg");
-    animation-delay: 24s;
+    animation-delay: -24s;
 }
 
-/* Animation */
+/* Smooth crossfade animation */
 @keyframes slideShow {
     0%   { opacity: 0; }
-    5%   { opacity: 1; }
-    20%  { opacity: 1; }
-    25%  { opacity: 0; }
+    10%  { opacity: 1; }   /* fade in */
+    20%  { opacity: 1; }   /* visible */
+    30%  { opacity: 0; }   /* fade out */
     100% { opacity: 0; }
 }
 
