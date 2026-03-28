@@ -99,24 +99,48 @@ body{
 }
 
 .slide{
-    position:absolute;
-    inset:0;
-    background-size:cover;
-    background-position:center;
-    opacity:0;
-    animation:slideShow 18s infinite;
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-color: black; /* fallback */
+    opacity: 0;
+    animation: slideShow 30s infinite;
+    will-change: opacity;
 }
 
-.slide1{background-image:url("https://images.unsplash.com/photo-1607746882042-944635dfe10e");}
-.slide2{background-image:url("https://images.unsplash.com/photo-1524178232363-1fb2b075b655");animation-delay:6s;}
-.slide3{background-image:url("https://images.unsplash.com/photo-1556761175-129418cb2dfe");animation-delay:12s;}
+/* Slides */
+.slide1{
+    background-image: url("https://www.sdmesociety.in/wp-content/uploads/2018/06/in_17.jpg");
+}
 
-@keyframes slideShow{
-    0%{opacity:0;}
-    10%{opacity:1;}
-    30%{opacity:1;}
-    40%{opacity:0;}
-    100%{opacity:0;}
+.slide2{
+    background-image: url("https://www.comedk.org/uploads/banner-new3.jpg");
+    animation-delay: 6s;
+}
+
+.slide3{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/1/1c/Aerial_view_of_SDM_College_of_Engineering_and_Technology%2C_Dharwad_Campus.jpg");
+    animation-delay: 12s;
+}
+
+.slide4{
+    background-image: url("https://sdmcet.ac.in/wp-content/uploads/2022/04/SDMCET-college-dharwad-small.jpg");
+    animation-delay: 18s;
+}
+
+.slide5{
+    background-image: url("https://www.admissioninfo.co.in/images/sdm-college-engineering-and-technology-dharwad.jpg");
+    animation-delay: 24s;
+}
+
+/* Animation */
+@keyframes slideShow {
+    0%   { opacity: 0; }
+    5%   { opacity: 1; }
+    20%  { opacity: 1; }
+    25%  { opacity: 0; }
+    100% { opacity: 0; }
 }
 
 .hero-content{
@@ -294,6 +318,8 @@ footer{
 <div class="slide slide1"></div>
 <div class="slide slide2"></div>
 <div class="slide slide3"></div>
+<div class="slide slide4"></div>
+<div class="slide slide5"></div>
 
 <div class="hero-content">
 
