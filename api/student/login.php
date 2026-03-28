@@ -1,29 +1,28 @@
 <?php
-
+session_start();
 include "../../config/db.php";
 
-$data = json_decode(file_get_contents("php://input"));
-
-$usn = $data->usn;
-$email = $data->email;
-$password = $data->password;
+$usn = $_POST['susn'];
+$email = $_POST['semail'];
+$password = $_POST['spassword'];
 
 $user = $db->students->findOne([
-    "usn"=>$usn,
-    "email"=>$email,
-    "password"=>$password
+    "usn" => $usn,
+    "email" => $email,
+    "password" => $password
 ]);
 
 if($user){
-    echo json_encode([
-        "status"=>"success",
-        "message"=>"Login successful"
-    ]);
-}else{
-    echo json_encode([
-        "status"=>"fail",
-        "message"=>"Invalid credentials"
-    ]);
-}
 
+    $_SESSION['student_usn'] = $usn;
+
+    header("Location: ../../student_panel.php");
+    exit();
+
+}else{
+    echo "<script>
+        alert('Invalid Login');
+        window.location.href='../../index.php';
+    </script>";
+}
 ?>
