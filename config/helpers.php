@@ -42,19 +42,6 @@ function mongoDateFromInput(string $value)
     return new MongoDB\BSON\UTCDateTime($timestamp * 1000);
 }
 
-function ensureAdminSeed($db): void
-{
-    if ($db->admins->countDocuments() === 0) {
-        $db->admins->insertOne([
-            'name' => 'Administrator',
-            'email' => 'admin@sdmcet.com',
-            'password' => 'admin123',
-            'role' => 'admin',
-            'created_at' => new MongoDB\BSON\UTCDateTime(),
-        ]);
-    }
-}
-
 function createNotification($notificationsCollection, string $recipientType, string $recipientId, string $title, string $message, string $link = ''): void
 {
     $notificationsCollection->insertOne([
@@ -157,4 +144,3 @@ function assetUrl(?string $relativePath, string $fallback = 'https://via.placeho
 
     return appUrl($relativePath);
 }
-

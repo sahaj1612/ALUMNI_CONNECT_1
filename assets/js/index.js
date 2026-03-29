@@ -1,23 +1,3 @@
-function studentLogin(){
-
-fetch("api/student/login.php",{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({
-usn:document.getElementById("susn").value,
-email:document.getElementById("semail").value,
-password:document.getElementById("spassword").value
-})
-})
-.then(res=>res.json())
-.then(data=>{
-alert(data.message);
-});
-
-}
-
 function alumniLogin(){
 
 fetch("api/alumni/login.php",{

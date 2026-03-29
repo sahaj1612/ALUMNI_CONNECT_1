@@ -321,7 +321,6 @@ $profilePhotoUrl = assetUrl($profilePhoto ?: null);
 <span>COLLEGE ALUMNI SYSTEM</span>
 <div class="topbar-actions">
 <a href="index.php" class="topbar-link">Back to Home</a>
-<a href="logout.php" class="topbar-link">Logout</a>
 </div>
 </div>
 
