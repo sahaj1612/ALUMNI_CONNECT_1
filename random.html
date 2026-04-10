@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <title>checkValue</title>
+        <body>
+
+            <h2>Enter Marks</h2>
+            <input type="number" id="num"
+            placeholder="Enter Values">
+            <br><br>
+
+            <button onclick="checkValue()">Submit</button>
+            
+            <p id="result"></p>
+
+            <script>
+                function checkValue() {
+                    let values =
+                    document.getElementById("num").values;
+
+                    if(values >=35){
+                        alert("you passed! value: " + values);
+                    }else{
+                        documemnt.getElementById("result").innerText = "failed";
+
+                    }
+                }
+                </script>
+        </body>
+    </html>

@@ -3,45 +3,70 @@
 <head>
 <title>Events</title>
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 body{background:#f5f6fa;}
 
 /* NAVBAR */
 .navbar{
-background:#3f4a63;
+background: rgba(31,42,68,0.85);
+backdrop-filter: blur(10px);
 color:white;
-padding:15px 40px;
+padding:12px 40px;
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .nav-left{
 display:flex;
 align-items:center;
-gap:10px;
+gap:15px;
 }
 
-.logo{width:45px;}
+.nav-left img{
+height:55px;
+background:white;
+padding:6px;
+border-radius:8px;
+}
 
-.nav-links{
+.nav-left h2{
+color:white;
+}
+
+/* NAV LINKS */
+.navbar ul{
+list-style:none;
 display:flex;
 gap:25px;
-align-items:center;
 }
 
-.login-btn{
-background:#f39c12;
-padding:8px 15px;
-border-radius:6px;
+.navbar ul li{
+color:white;
 cursor:pointer;
+position:relative;
+}
+
+.navbar ul li::after{
+content:"";
+width:0%;
+height:2px;
+background:#ff9f1a;
+position:absolute;
+left:0;
+bottom:-5px;
 transition:0.3s;
 }
 
-.login-btn:hover{
-background:#d35400;
-transform:scale(1.05);
+.navbar ul li:hover::after{
+width:100%;
 }
 
 /* HEADER */
@@ -52,25 +77,18 @@ text-align:center;
 padding:60px;
 }
 
-/* CONTENT */
+/* CONTAINER */
 .container{
 padding:50px 10%;
 }
 
-/* SECTION CARD STYLE (LIKE ABOUT PAGE) */
+/* SECTION */
 .section{
-margin-bottom:40px;
+margin-bottom:30px;
 padding:20px;
 background:white;
 border-radius:10px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
-transition:0.3s;
-}
-
-/* 🔥 HOVER EFFECT */
-.section:hover{
-transform:translateY(-8px);
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 .section h2{
@@ -85,8 +103,9 @@ margin-bottom:10px;
 }
 
 /* LIST */
-ul{
+.container ul{
 margin-left:20px;
+margin-top:10px;
 color:#555;
 }
 
@@ -106,14 +125,6 @@ box-shadow:0 4px 10px rgba(0,0,0,0.1);
 flex:1;
 min-width:250px;
 text-align:center;
-transition:0.3s;
-cursor:pointer;
-}
-
-/* 🔥 CARD HOVER */
-.card:hover{
-transform:translateY(-10px) scale(1.05);
-box-shadow:0 12px 30px rgba(0,0,0,0.2);
 }
 </style>
 
@@ -124,17 +135,15 @@ box-shadow:0 12px 30px rgba(0,0,0,0.2);
 <!-- NAVBAR -->
 <div class="navbar">
 <div class="nav-left">
-<img src="https://cache.careers360.mobi/media/colleges/social-media/logo/SDM_College_of_Engineering_and_Technology_Logo_.png" style="height:55px; background:white; padding:6px; border-radius:8px;">
+<img src="https://cache.careers360.mobi/media/colleges/social-media/logo/SDM_College_of_Engineering_and_Technology_Logo_.png">
 <h2>SDMCET AlumniConnect</h2>
 </div>
 
-<div class="nav-links">
-<span>About</span>
-<span>Alumni</span>
-<span>Events</span>
-<span>Support</span>
-<span class="login-btn">Login</span>
-</div>
+<ul>
+<li>About SDMCET</li>
+<li>Alumni</li>
+<li>Support</li>
+</ul>
 </div>
 
 <!-- HEADER -->
@@ -150,11 +159,11 @@ box-shadow:0 12px 30px rgba(0,0,0,0.2);
 <h2>Insignia – Techno-Cultural Festival</h2>
 
 <p>
-Insignia is the flagship annual techno-cultural festival of SDMCET, attracting students from across the state and neighboring regions. It includes a wide range of technical and cultural events.
+Insignia is the flagship annual techno-cultural festival of SDMCET, attracting students from across the state and neighboring regions.
 </p>
 
 <p>
-The festival features paper presentations, quizzes, business challenges, science projects, and innovation showcases. Along with technical events, it also includes dance, music, dramatics, fine arts, and literary competitions.
+It includes paper presentations, quizzes, business challenges, science projects, innovation showcases, and cultural competitions.
 </p>
 
 <p>
@@ -167,11 +176,11 @@ Special highlights include live concerts, auto expos, drone competitions, and so
 <h2>National Level Cybersecurity & Technology Event</h2>
 
 <p>
-SDMCET hosted a national-level event focused on cybersecurity, AI, and blockchain technologies, bringing together experts and students from across Karnataka.
+SDMCET hosted a national-level event focused on cybersecurity, AI, and blockchain technologies.
 </p>
 
 <p>
-The event included a large-scale Hackathon with multiple teams showcasing innovation and technical skills.
+The event included a large-scale Hackathon with multiple teams showcasing innovation.
 </p>
 
 <p><b>Key Highlights:</b></p>
@@ -184,9 +193,8 @@ The event included a large-scale Hackathon with multiple teams showcasing innova
 </ul>
 
 <p>
-It provided a strong platform for learning, networking, and collaboration in emerging technologies.
+It provided a strong platform for learning and collaboration.
 </p>
-
 </div>
 
 <!-- HIGHLIGHTS -->

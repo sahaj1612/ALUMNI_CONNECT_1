@@ -3,45 +3,71 @@
 <head>
 <title>Alumni</title>
 
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 body{background:#f5f6fa;}
 
 /* NAVBAR */
 .navbar{
-background:#3f4a63;
+background: rgba(31,42,68,0.85);
+backdrop-filter: blur(10px);
 color:white;
-padding:15px 40px;
+padding:12px 40px;
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .nav-left{
 display:flex;
 align-items:center;
-gap:10px;
+gap:15px;
 }
 
-.logo{width:45px;}
+.nav-left img{
+height:55px;
+background:white;
+padding:6px;
+border-radius:8px;
+}
 
-.nav-links{
+.nav-left h2{
+color:white;
+}
+
+/* NAV LINKS */
+.navbar ul{
+list-style:none;
 display:flex;
 gap:25px;
-align-items:center;
 }
 
-.login-btn{
-background:#f39c12;
-padding:8px 15px;
-border-radius:6px;
+.navbar ul li{
+color:white;
 cursor:pointer;
+position:relative;
+}
+
+/* underline hover */
+.navbar ul li::after{
+content:"";
+width:0%;
+height:2px;
+background:#ff9f1a;
+position:absolute;
+left:0;
+bottom:-5px;
 transition:0.3s;
 }
 
-.login-btn:hover{
-background:#d35400;
-transform:scale(1.05);
+.navbar ul li:hover::after{
+width:100%;
 }
 
 /* HEADER */
@@ -57,19 +83,18 @@ padding:60px;
 padding:40px 5%;
 }
 
-/* TOP LINKS BOX */
+/* TOP INFO */
 .top-info{
 background:white;
 padding:20px;
 border-radius:10px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
 margin-bottom:30px;
-transition:0.3s;
 }
 
-.top-info:hover{
-transform:translateY(-5px);
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
+.top-info p{
+margin-bottom:12px;
+line-height:1.6;
 }
 
 /* TABLE */
@@ -87,7 +112,6 @@ padding:12px;
 border:1px solid #ddd;
 text-align:left;
 font-size:14px;
-transition:0.2s;
 }
 
 th{
@@ -95,17 +119,15 @@ background:#34495e;
 color:white;
 }
 
-/* 🔥 ROW HOVER */
 tr:hover td{
 background:#f9f9f9;
-transform:scale(1.01);
 }
 
 /* LINKS */
 .link{
 color:#2980b9;
 font-weight:500;
-cursor:pointer;
+text-decoration:none;
 }
 
 .link:hover{
@@ -126,16 +148,15 @@ color:#2c3e50;
 <!-- NAVBAR -->
 <div class="navbar">
 <div class="nav-left">
-<img src="https://cache.careers360.mobi/media/colleges/social-media/logo/SDM_College_of_Engineering_and_Technology_Logo_.png" style="height:55px; background:white; padding:6px; border-radius:8px;"><h2>SDMCET AlumniConnect</h2>
+<img src="https://cache.careers360.mobi/media/colleges/social-media/logo/SDM_College_of_Engineering_and_Technology_Logo_.png">
+<h2>SDMCET AlumniConnect</h2>
 </div>
 
-<div class="nav-links">
-<span>About</span>
-<span>Alumni</span>
-<span>Events</span>
-<span>Support</span>
-<span class="login-btn">Login</span>
-</div>
+<ul>
+<li>About SDMCET</li>
+<li>Events</li>
+<li>Support</li>
+</ul>
 </div>
 
 <!-- HEADER -->
@@ -148,9 +169,22 @@ color:#2c3e50;
 
 <!-- TOP INFO -->
 <div class="top-info">
-<p><b>Memorandum of Association & Rules:</b> <span class="link">Click here</span></p>
-<p><b>Governing Body Report:</b> <span class="link">Click here</span></p>
-<p><b>More Details:</b> https://www.sdmcetalumni.org/mobileapp</p>
+
+<p>
+<b>Memorandum of Association & Rules:</b> 
+<a href="https://sdmcet.ac.in/downloads/2025/Alumni/Memorandum.pdf" target="_blank" class="link">Click here</a>
+</p>
+
+<p>
+<b>Governing Body Report:</b> 
+<a href="https://sdmcet.ac.in/governing-council/" target="_blank" class="link">Click here</a>
+</p>
+
+<p>
+<b>More Details:</b> 
+<a href="https://www.sdmcetalumni.org/mobileapp" target="_blank" class="link">Visit here</a>
+</p>
+
 </div>
 
 <h2 class="section-title">Committee Members</h2>
