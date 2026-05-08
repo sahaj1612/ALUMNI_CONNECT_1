@@ -44,6 +44,16 @@ export const formatDateInput = (value) => {
 
 export const formatAssetUrl = (value) => formatUploadPath(value);
 
+const normalisePanelLink = (value) => {
+  if (!value) {
+    return "";
+  }
+
+  return String(value)
+    .replace(/^\/student(\?|$)/, "/student-panel$1")
+    .replace(/^\/alumni(\?|$)/, "/alumni-panel$1");
+};
+
 export const serialiseDoc = (doc) => {
   const record = doc?.toObject ? doc.toObject() : doc;
 
@@ -67,7 +77,7 @@ export const serialiseNotification = (notification) => {
   return {
     ...record,
     created_at: normaliseMongoDate(record.created_at),
-    link: record.link || "",
+    link: normalisePanelLink(record.link),
   };
 };
 

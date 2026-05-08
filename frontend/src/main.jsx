@@ -1,4 +1,4 @@
-// React entrypoint that mounts the application and wraps it in router/auth providers.
+// React entrypoint that mounts the application and wraps it in router/auth providers
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";

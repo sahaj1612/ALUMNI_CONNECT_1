@@ -1,11 +1,24 @@
-// Public home page for the AlumniConnect frontend.
-// Shows branding, hero section, and login modal.
+// Public home page for the AlumniConnect frontend
+// Shows branding, hero section, and login modal
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PublicNavbar from "../components/PublicNavbar.jsx";
 import LoginModal from "../components/LoginModal.jsx";
+import { useAuth } from "../context/AuthContext.jsx";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+  const { authenticated, userType } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handlePrimaryAction = () => {
+    if (authenticated) {
+      navigate(userType === "alumni" ? "/alumni-panel" : "/student-panel");
+      return;
+    }
+
+    setIsModalOpen(true);
+  };
 
   return (
     <>
@@ -28,8 +41,8 @@ const HomePage = () => {
             learning, collaboration, and industry readiness.
           </p>
           <div className="hero-actions">
-            <button className="hero-login-btn" onClick={() => setIsModalOpen(true)}>
-              Login
+            <button className="hero-login-btn" onClick={handlePrimaryAction}>
+              {authenticated ? "Back to Dashboard" : "Login"}
             </button>
           </div>
         </div>

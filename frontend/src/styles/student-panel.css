@@ -46,6 +46,7 @@ align-items:center;
 .topbar-actions{
 display:flex;
 gap:16px;
+align-items:center;
 }
 
 .content{
@@ -103,12 +104,7 @@ box-shadow:0 4px 10px rgba(0,0,0,0.1);
 padding:30px;
 }
 
-.topbar-link{
-font-size:14px;
-color:#ffd166;
-text-decoration:none;
-}
-
+.topbar-link,
 .logout-link{
 font-size:14px;
 color:#ffd166;
@@ -150,14 +146,27 @@ font-size:13px;
 color:#6b7280;
 }
 
+.panel-home-btn,
 .panel-logout-btn{
 border:none;
 background:#ff9f1a;
 color:#111827;
-padding:8px 14px;
-border-radius:8px;
-font-size:13px;
+padding:10px 22px;
+border-radius:10px;
+font-size:14px;
 font-weight:700;
+text-decoration:none;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+line-height:1;
+cursor:pointer;
+}
+
+.panel-home-btn:hover,
+.panel-logout-btn:hover{
+background:#ffb347;
+color:#111827;
 }
 
 textarea{

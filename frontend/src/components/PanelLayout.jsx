@@ -1,5 +1,5 @@
 // Shared panel layout used by student and alumni dashboard pages.
-// Renders the sidebar, topbar, and logout behavior.
+// Renders the sidebar, topbar, home navigation, and logout behavior.
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext.jsx";
 
@@ -37,7 +37,7 @@ const PanelLayout = ({
       <div className="topbar">
         <span>COLLEGE ALUMNI SYSTEM</span>
         <div className="topbar-actions">
-          <Link to="/" className={title === "Alumni Panel" ? "logout-link" : "topbar-link"}>
+          <Link to="/" className="panel-home-btn">
             {homeLinkText}
           </Link>
           <button type="button" className="panel-logout-btn" onClick={handleLogout}>

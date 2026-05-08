@@ -1,4 +1,4 @@
-// Mongoose schema for alumni profiles in the AlumniConnect database.
+// Mongoose schema for alumni profiles in the AlumniConnect database
 import mongoose from "mongoose";
 
 const alumniSchema = new mongoose.Schema(

@@ -101,6 +101,30 @@ text-decoration:none;
 .topbar-actions{
 display:flex;
 gap:16px;
+align-items:center;
+}
+
+.panel-home-btn,
+.panel-logout-btn{
+border:none;
+background:#ff9f1a;
+color:#111827;
+padding:10px 22px;
+border-radius:10px;
+font-size:14px;
+font-weight:700;
+text-decoration:none;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+line-height:1;
+cursor:pointer;
+}
+
+.panel-home-btn:hover,
+.panel-logout-btn:hover{
+background:#ffb347;
+color:#111827;
 }
 
 .profile-layout{
