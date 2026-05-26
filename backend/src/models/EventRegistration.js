@@ -21,4 +21,6 @@ const eventRegistrationSchema = new mongoose.Schema(
   }
 );
 
+eventRegistrationSchema.index({ student_usn: 1, event_id: 1 }, { unique: true });
+
 export default mongoose.model("EventRegistration", eventRegistrationSchema);

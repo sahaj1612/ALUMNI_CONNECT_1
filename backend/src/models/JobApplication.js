@@ -24,4 +24,6 @@ const jobApplicationSchema = new mongoose.Schema(
   }
 );
 
+jobApplicationSchema.index({ student_usn: 1, job_id: 1 }, { unique: true });
+
 export default mongoose.model("JobApplication", jobApplicationSchema);
